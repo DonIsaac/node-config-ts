@@ -14,7 +14,7 @@ type NodeENV = {
 }
 export const replaceWithEnvVar = <T, P extends NodeENV>(
   baseConfig: T,
-  process: P = { env: {} } as P
+  process: P = {env: {}} as P
 ): T => {
   const itar: any = R.map((value: any) => {
     if (R.is(Object, value)) return itar(value)

@@ -17,6 +17,7 @@
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once",
     "lint": "eslint src test --ext ts",
+    "lint:fix": "eslint src test --ext ts --fix",
     "prettier": "git ls-files | grep -E '.*\\.(ts|md|json)$' | xargs prettier --write --config=.prettierrc",
     "test": "mocha",
     "commit": "cz",

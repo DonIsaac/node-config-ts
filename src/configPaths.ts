@@ -34,23 +34,26 @@ export const configPaths = <T extends NonConfigEnv>(
     process.cwd(),
     `${baseDIR}/${DEFAULT_FILENAME}.json`
   )
-  const envConfigFile = `${process.env['NODE_CONFIG_TS_ENV'] ||
+  const envConfigFile = `${
+    process.env['NODE_CONFIG_TS_ENV'] ||
     process.env['NODE_ENV'] ||
-    DEFAULT_FILENAME}`
+    DEFAULT_FILENAME
+  }`
   const envConfig = path.resolve(
     process.cwd(),
     `${baseDIR}/env/${envConfigFile}.json`
   )
   const deploymentConfig = path.resolve(
     process.cwd(),
-    `${baseDIR}/deployment/${process.env['DEPLOYMENT'] ||
-      DEFAULT_FILENAME}.json`
+    `${baseDIR}/deployment/${
+      process.env['DEPLOYMENT'] || DEFAULT_FILENAME
+    }.json`
   )
   const userConfig = path.resolve(
     process.cwd(),
-    `${baseDIR}/user/${process.env['USER'] ||
-      process.env['USERNAME'] ||
-      DEFAULT_FILENAME}.json`
+    `${baseDIR}/user/${
+      process.env['USER'] || process.env['USERNAME'] || DEFAULT_FILENAME
+    }.json`
   )
   return {defaultConfig, envConfig, deploymentConfig, userConfig}
 }

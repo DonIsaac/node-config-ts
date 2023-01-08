@@ -11,7 +11,7 @@ describe('mergeFileConfigs()', () => {
       envConfig: {},
       deploymentConfig: {},
       userConfig: {},
-      cliConfig: {}
+      cliConfig: {},
     }
     const actual = mergeFileConfigs(configs)
     const expected = {a: 1}
@@ -23,7 +23,7 @@ describe('mergeFileConfigs()', () => {
       envConfig: {b: 2, c: 3},
       deploymentConfig: {},
       userConfig: {},
-      cliConfig: {}
+      cliConfig: {},
     }
     const actual = mergeFileConfigs(configs)
     const expected = {a: 0, b: 2, c: 3}
@@ -35,7 +35,7 @@ describe('mergeFileConfigs()', () => {
       envConfig: {b: 2, c: 3},
       deploymentConfig: {c: 4, d: 5},
       userConfig: {},
-      cliConfig: {}
+      cliConfig: {},
     }
     const actual = mergeFileConfigs(configs)
     const expected = {a: 0, b: 2, c: 4, d: 5}
@@ -47,7 +47,7 @@ describe('mergeFileConfigs()', () => {
       envConfig: {b: 2, c: 3},
       deploymentConfig: {c: 4, d: 5},
       userConfig: {d: 6, e: 7},
-      cliConfig: {}
+      cliConfig: {},
     }
     const actual = mergeFileConfigs(configs)
     const expected = {a: 0, b: 2, c: 4, d: 6, e: 7}
@@ -59,7 +59,7 @@ describe('mergeFileConfigs()', () => {
       envConfig: {a: {b: {c1: 2}}},
       deploymentConfig: {},
       userConfig: {},
-      cliConfig: {}
+      cliConfig: {},
     }
     const actual = mergeFileConfigs(configs)
     const expected = {a: {b: {c0: 1, c1: 2}}}

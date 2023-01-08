@@ -11,18 +11,18 @@ export const createTypedefCode = (config: Record<string, any>) => {
     [
       '/* tslint:disable */',
       '/* eslint-disable */',
-      'declare module "node-config-ts" {'
+      'declare module "node-config-ts" {',
     ]
       .concat(JsonToTS(config, {rootName}))
       .concat([
         'export const config: Config',
         `export type Config = ${rootName}`,
-        '}'
+        '}',
       ])
       .join('\n'),
     {
       parser: 'typescript',
-      semi: false
+      semi: false,
     }
   )
 

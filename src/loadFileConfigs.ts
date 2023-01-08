@@ -8,7 +8,10 @@ import * as R from 'ramda'
 import * as JSON5 from 'json5'
 import {configPaths, ConfigTypes, NonConfigEnv} from './configPaths'
 
-const readAndParse = R.pipe((file: string) => fs.readFileSync(file, 'utf8'), JSON5.parse)
+const readAndParse = R.pipe(
+  (file: string) => fs.readFileSync(file, 'utf8'),
+  JSON5.parse
+)
 
 export type Configurations<T> = {[key in keyof T]: any}
 

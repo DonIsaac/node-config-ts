@@ -11,15 +11,15 @@ describe('mergeAllConfigs()', () => {
         DEPLOYMENT: 'www.example.com',
         NODE_ENV: 'production',
         USER: 'root',
-        MAX_RETRIES: 999
-      }
+        MAX_RETRIES: 999,
+      },
     }
     const actual = mergeAllConfigs(process)
     const expected = {
       type: 'user',
       port: 9000,
       maxRetries: 999,
-      secret: undefined
+      secret: undefined,
     }
     assert.deepEqual(actual, expected)
   })
@@ -31,8 +31,8 @@ describe('mergeAllConfigs()', () => {
         DEPLOYMENT: 'www.example.com',
         NODE_ENV: 'production',
         USER: 'root',
-        MAX_RETRIES: 999
-      }
+        MAX_RETRIES: 999,
+      },
     }
     const actual = mergeAllConfigs(process)
     const expected = {
@@ -40,7 +40,7 @@ describe('mergeAllConfigs()', () => {
       port: 3000,
       wonder: 'woman',
       maxRetries: 999,
-      secret: undefined
+      secret: undefined,
     }
     assert.deepEqual(actual, expected)
   })
@@ -53,15 +53,15 @@ describe('mergeAllConfigs()', () => {
         NODE_ENV: 'production',
         USER: 'root',
         MAX_RETRIES: 999,
-        secret: undefined
-      }
+        secret: undefined,
+      },
     }
     const actual = mergeAllConfigs(process)
     const expected = {
       type: 'user',
       port: 3000,
       maxRetries: 150,
-      secret: undefined
+      secret: undefined,
     }
     assert.deepEqual(actual, expected)
   })
@@ -76,15 +76,15 @@ describe('mergeAllConfigs()', () => {
           NODE_CONFIG_TS_ENV: 'production',
           USER: 'root',
           MAX_RETRIES: 999,
-          secret: undefined
-        }
+          secret: undefined,
+        },
       }
       const actual = mergeAllConfigs(process)
       const expected = {
         type: 'user',
         port: 9000,
         maxRetries: 999,
-        secret: undefined
+        secret: undefined,
       }
       assert.deepEqual(actual, expected)
     })
@@ -97,8 +97,8 @@ describe('mergeAllConfigs()', () => {
           NODE_CONFIG_TS_ENV: 'production',
           USER: 'root',
           MAX_RETRIES: 999,
-          secret: undefined
-        }
+          secret: undefined,
+        },
       }
       const actual = mergeAllConfigs(process)
       const expected = {
@@ -106,7 +106,7 @@ describe('mergeAllConfigs()', () => {
         port: 3000,
         wonder: 'woman',
         maxRetries: 999,
-        secret: undefined
+        secret: undefined,
       }
       assert.deepEqual(actual, expected)
     })
@@ -119,14 +119,14 @@ describe('mergeAllConfigs()', () => {
           NODE_CONFIG_TS_ENV: 'production',
           USER: 'root',
           MAX_RETRIES: 999,
-        }
+        },
       }
       const actual = mergeAllConfigs(process)
       const expected = {
         type: 'user',
         port: 3000,
         maxRetries: 150,
-        secret: undefined
+        secret: undefined,
       }
       assert.deepEqual(actual, expected)
     })

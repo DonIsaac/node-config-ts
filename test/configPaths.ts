@@ -9,7 +9,7 @@ describe('config-paths', () => {
     it('should return config path', () => {
       const process = {
         env: {},
-        cwd: () => '/app/www.bravo.com/server'
+        cwd: () => '/app/www.bravo.com/server',
       }
       const actual = configPaths(process).defaultConfig
       const expected = '/app/www.bravo.com/server/config/default.json'
@@ -22,7 +22,7 @@ describe('config-paths', () => {
     it('should return actual config path', () => {
       const process = {
         env: {NODE_ENV: 'production'},
-        cwd: () => '/app/www.bravo.com/server'
+        cwd: () => '/app/www.bravo.com/server',
       }
       const actual = configPaths(process).envConfig
       const expected = '/app/www.bravo.com/server/config/env/production.json'
@@ -32,7 +32,7 @@ describe('config-paths', () => {
     it('should return default config path', () => {
       const process = {
         env: {},
-        cwd: () => '/app/www.bravo.com/server'
+        cwd: () => '/app/www.bravo.com/server',
       }
       const actual = configPaths(process).envConfig
       const expected = '/app/www.bravo.com/server/config/env/default.json'
@@ -45,7 +45,7 @@ describe('config-paths', () => {
     it('should return actual config path', () => {
       const process = {
         env: {DEPLOYMENT: 'www.example.com'},
-        cwd: () => '/app/www.bravo.com/server'
+        cwd: () => '/app/www.bravo.com/server',
       }
       const actual = configPaths(process).deploymentConfig
       const expected =
@@ -56,7 +56,7 @@ describe('config-paths', () => {
     it('should return default config path', () => {
       const process = {
         env: {},
-        cwd: () => '/app/www.bravo.com/server'
+        cwd: () => '/app/www.bravo.com/server',
       }
       const actual = configPaths(process).deploymentConfig
       const expected =
@@ -70,7 +70,7 @@ describe('config-paths', () => {
     it('should return actual config path', () => {
       const process = {
         env: {USER: 'root'},
-        cwd: () => '/app/www.bravo.com/server'
+        cwd: () => '/app/www.bravo.com/server',
       }
       const actual = configPaths(process).userConfig
       const expected = '/app/www.bravo.com/server/config/user/root.json'
@@ -80,7 +80,7 @@ describe('config-paths', () => {
     it('should return default config path', () => {
       const process = {
         env: {},
-        cwd: () => '/app/www.bravo.com/server'
+        cwd: () => '/app/www.bravo.com/server',
       }
       const actual = configPaths(process).userConfig
       const expected = '/app/www.bravo.com/server/config/user/default.json'
@@ -93,7 +93,7 @@ describe('config-paths', () => {
     it('should return actual config path', () => {
       const process = {
         env: {USERNAME: 'root'},
-        cwd: () => '/app/www.bravo.com/server'
+        cwd: () => '/app/www.bravo.com/server',
       }
       const actual = configPaths(process).userConfig
       const expected = '/app/www.bravo.com/server/config/user/root.json'
@@ -103,7 +103,7 @@ describe('config-paths', () => {
     it('should return default config path', () => {
       const process = {
         env: {},
-        cwd: () => '/app/www.bravo.com/server'
+        cwd: () => '/app/www.bravo.com/server',
       }
       const actual = configPaths(process).userConfig
       const expected = '/app/www.bravo.com/server/config/user/default.json'
@@ -116,7 +116,7 @@ describe('config-paths', () => {
     it('should set base config dir', () => {
       const process = {
         env: {NODE_ENV: 'production', NODE_CONFIG_TS_DIR: './/main/config'},
-        cwd: () => '/root'
+        cwd: () => '/root',
       }
 
       const actual = configPaths(process)
@@ -124,7 +124,7 @@ describe('config-paths', () => {
         defaultConfig: '/root/main/config/default.json',
         deploymentConfig: '/root/main/config/deployment/default.json',
         envConfig: '/root/main/config/env/production.json',
-        userConfig: '/root/main/config/user/default.json'
+        userConfig: '/root/main/config/user/default.json',
       }
 
       assert.deepEqual(actual, expected)

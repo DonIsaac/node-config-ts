@@ -9,16 +9,16 @@ import * as JSON5 from 'json5'
 import {loadFileConfigs} from '../src/loadFileConfigs'
 
 describe('load-file-configs', () => {
-
   const [defaultConfig, deploymentConfig, envConfig, userConfig] = [
     'default',
     'deployment/www.example.com',
     'env/production',
-    'user/root'
-  ].map(file => `./stub-module/config/${file}.json`)
-  .map(file => path.resolve(__dirname, file))
-  .map(file => fs.readFileSync(file, 'utf8'))
-  .map(config => JSON5.parse(config))
+    'user/root',
+  ]
+    .map((file) => `./stub-module/config/${file}.json`)
+    .map((file) => path.resolve(__dirname, file))
+    .map((file) => fs.readFileSync(file, 'utf8'))
+    .map((config) => JSON5.parse(config))
 
   it('should load the configs that are available', () => {
     const process = {
@@ -26,15 +26,15 @@ describe('load-file-configs', () => {
       env: {
         DEPLOYMENT: 'www.example.com',
         NODE_ENV: 'production',
-        USER: 'root'
-      }
+        USER: 'root',
+      },
     }
     const actual = loadFileConfigs(process)
     const expected = {
       defaultConfig,
       deploymentConfig,
       envConfig,
-      userConfig
+      userConfig,
     }
     assert.deepEqual(actual, expected)
   })
@@ -45,15 +45,15 @@ describe('load-file-configs', () => {
       env: {
         DEPLOYMENT: 'www.example.com',
         NODE_ENV: 'development',
-        USER: 'root'
-      }
+        USER: 'root',
+      },
     }
     const actual = loadFileConfigs(process)
     const expected = {
       defaultConfig,
       deploymentConfig,
       envConfig: {},
-      userConfig
+      userConfig,
     }
     assert.deepEqual(actual, expected)
   })
@@ -65,15 +65,15 @@ describe('load-file-configs', () => {
         env: {
           DEPLOYMENT: 'www.example.com',
           NODE_CONFIG_TS_ENV: 'production',
-          USER: 'root'
-        }
+          USER: 'root',
+        },
       }
       const actual = loadFileConfigs(process)
       const expected = {
         defaultConfig,
         deploymentConfig,
         envConfig,
-        userConfig
+        userConfig,
       }
       assert.deepEqual(actual, expected)
     })
@@ -84,15 +84,15 @@ describe('load-file-configs', () => {
         env: {
           DEPLOYMENT: 'www.example.com',
           NODE_CONFIG_TS_ENV: 'development',
-          USER: 'root'
-        }
+          USER: 'root',
+        },
       }
       const actual = loadFileConfigs(process)
       const expected = {
         defaultConfig,
         deploymentConfig,
         envConfig: {},
-        userConfig
+        userConfig,
       }
       assert.deepEqual(actual, expected)
     })
