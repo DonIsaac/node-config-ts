@@ -5,18 +5,18 @@
     "json-to-ts": "^1.6.0",
     "json5": "^2.2.2",
     "minimist": "^1.2.0",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.0",
     "ramda": "^0.27.0"
   },
   "peerDependencies": {
     "@types/webpack": "4.x",
-    "webpack": "4.x",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "webpack": "4.x"
   },
   "scripts": {
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once",
-    "lint": "tslint --project .",
+    "lint": "eslint src test --ext ts",
     "prettier": "git ls-files | grep -E '.*\\.(ts|md|json)$' | xargs prettier --write --config=.prettierrc",
     "test": "mocha",
     "commit": "cz",
@@ -31,8 +31,13 @@
     "@types/prettier": "^1.19.0",
     "@types/ramda": "^0.26.40",
     "@types/webpack": "^4.41.5",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
     "commitizen": "^4.2.6",
     "cz-conventional-changelog": "^3.1.0",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "mocha": "^7.0.1",
     "semantic-release": "^17.0.2",
     "travis-deploy-once": "^5.0.9",

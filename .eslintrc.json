@@ -1,0 +1,28 @@
+{
+    "root": true,
+    "plugins": [
+        "@typescript-eslint",
+        "prettier"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "ignorePatterns": [
+        "node_modules",
+        "test/**/*.js",
+        "test/**/*.d.ts",
+        "src/**/*.js",
+        "src/**/*.d.ts"
+    ],
+    "env": {
+        "es6": true,
+        "node": true,
+        "browser": false
+    }
+}
