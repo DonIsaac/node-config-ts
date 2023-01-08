@@ -2,11 +2,13 @@
     "root": true,
     "plugins": [
         "@typescript-eslint",
+        "security",
         "prettier"
     ],
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:security/recommended",
         "plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
@@ -24,5 +26,9 @@
         "es6": true,
         "node": true,
         "browser": false
+    },
+    "rules": {
+        "security/detect-non-literal-fs-filename": "off",
+        "security/detect-unsafe-regex": "error"
     }
 }
